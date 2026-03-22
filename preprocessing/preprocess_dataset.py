@@ -3,8 +3,8 @@ from __future__ import annotations
 """Preprocess survey responses into train/val/test artifacts for painting prediction.
 
 Usage:
-    python preprocess_dataset.py
-    python preprocess_dataset.py --csv data/training_data_202601.csv --out processed
+    python preprocessing/preprocess_dataset.py
+    python preprocessing/preprocess_dataset.py --csv data/training_data_202601.csv --out processed/preprocessing
 
 Outputs:
     - sparse feature matrices: train_X.npz / val_X.npz / test_X.npz
@@ -27,8 +27,9 @@ import pandas as pd
 from scipy import sparse
 
 
-DEFAULT_CSV = Path("data") / "training_data_202601.csv"
-DEFAULT_OUTPUT_DIR = Path("processed")
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+DEFAULT_CSV = PROJECT_ROOT / "data" / "training_data_202601.csv"
+DEFAULT_OUTPUT_DIR = PROJECT_ROOT / "processed" / "preprocessing"
 DEFAULT_RANDOM_SEED = 311
 DEFAULT_TRAIN_RATIO = 0.70
 DEFAULT_VAL_RATIO = 0.20
