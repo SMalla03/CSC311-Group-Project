@@ -7,7 +7,7 @@ Usage:
     python preprocessing/preprocess_dataset.py --csv data/training_data_202601.csv --out processed/preprocessing
 
 Outputs:
-    - sparse feature matrices: train_X.npz / val_X.npz / test_X.npz
+    - dense feature matrices in compressed NumPy format: train_X.npz / val_X.npz / test_X.npz
     - encoded labels: train_y.npy / val_y.npy / test_y.npy
     - row tracking files: train_rows.csv / val_rows.csv / test_rows.csv
     - metadata, feature names, and the fitted preprocessing objects
@@ -24,7 +24,6 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
-from scipy import sparse
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -361,13 +360,10 @@ class SimpleTfidfVectorizer:
             dtype=np.float32,
         )
 
-    def transform(self, documents: pd.Series) -> sparse.csr_matrix:
+    def transform(self, documents: pd.Series) -> np.ndarray:
         if self.idf_ is None:
             raise ValueError("Vectorizer must be fit before transform.")
-
-        rows: list[int] = []
-        cols: list[int] = []
-        data: list[float] = []
+        matrix = np.zeros((len(documents), len(self.feature_names_)), dtype=np.float32)
 
         for row_index, document in enumerate(documents.tolist()):
             term_counts = Counter(
@@ -380,15 +376,7 @@ class SimpleTfidfVectorizer:
             for term, count in term_counts.items():
                 col_index = self.vocabulary_[term]
                 tf = count / total_terms
-                rows.append(row_index)
-                cols.append(col_index)
-                data.append(float(tf * self.idf_[col_index]))
-
-        matrix = sparse.csr_matrix(
-            (data, (rows, cols)),
-            shape=(len(documents), len(self.feature_names_)),
-            dtype=np.float32,
-        )
+                matrix[row_index, col_index] = float(tf * self.idf_[col_index])
         return matrix
 
     def get_feature_names_out(self) -> np.ndarray:
@@ -405,25 +393,16 @@ class SimpleMultiLabelBinarizer:
         self.classes_ = classes
         self.class_to_index = {label: index for index, label in enumerate(classes)}
 
-    def transform(self, values: pd.Series) -> sparse.csr_matrix:
-        rows: list[int] = []
-        cols: list[int] = []
-        data: list[float] = []
+    def transform(self, values: pd.Series) -> np.ndarray:
+        matrix = np.zeros((len(values), len(self.classes_)), dtype=np.float32)
 
         for row_index, labels in enumerate(values.tolist()):
             for label in labels:
                 col_index = self.class_to_index.get(label)
                 if col_index is None:
                     continue
-                rows.append(row_index)
-                cols.append(col_index)
-                data.append(1.0)
-
-        return sparse.csr_matrix(
-            (data, (rows, cols)),
-            shape=(len(values), len(self.classes_)),
-            dtype=np.float32,
-        )
+                matrix[row_index, col_index] = 1.0
+        return matrix
 
 
 class SimpleLabelEncoder:
@@ -465,8 +444,8 @@ def build_split_assignments(group_ids: np.ndarray, seed: int) -> tuple[set[int],
     return train_groups, val_groups, test_groups
 
 
-def write_sparse_split(output_dir: Path, split_name: str, x_matrix: sparse.csr_matrix, y_array: np.ndarray, rows: pd.DataFrame) -> None:
-    sparse.save_npz(output_dir / f"{split_name}_X.npz", x_matrix)
+def write_split(output_dir: Path, split_name: str, x_matrix: np.ndarray, y_array: np.ndarray, rows: pd.DataFrame) -> None:
+    np.savez_compressed(output_dir / f"{split_name}_X.npz", data=x_matrix.astype(np.float32))
     np.save(output_dir / f"{split_name}_y.npy", y_array)
     rows.loc[:, ["unique_id", "Painting"]].to_csv(output_dir / f"{split_name}_rows.csv", index=False)
 
@@ -543,7 +522,7 @@ def main() -> None:
     }
 
     categorical_encoders: dict[str, SimpleMultiLabelBinarizer] = {}
-    categorical_matrices: dict[str, sparse.csr_matrix] = {}
+    categorical_matrices: dict[str, np.ndarray] = {}
     categorical_feature_names: list[str] = []
 
     for feature_name, column_name in categorical_columns.items():
@@ -559,12 +538,12 @@ def main() -> None:
         for feature_name, column_name in categorical_columns.items():
             encoder = categorical_encoders[feature_name]
             encoded_parts.append(encoder.transform(split_frame[column_name].map(split_multivalue_cell)))
-        categorical_matrices[split_name] = sparse.hstack(encoded_parts, format="csr")
+        categorical_matrices[split_name] = np.hstack(encoded_parts).astype(np.float32)
 
     numeric_processor = NumericPreprocessor(numeric_specs, clip_quantile=args.clip_quantile)
     numeric_processor.fit(splits["train"])
     numeric_matrices = {
-        name: sparse.csr_matrix(numeric_processor.transform(split_frame))
+        name: numeric_processor.transform(split_frame)
         for name, split_frame in splits.items()
     }
 
@@ -586,11 +565,10 @@ def main() -> None:
 
     for split_name in ("train", "val", "test"):
         # Final feature matrix = [text TF-IDF | categorical multi-hot | numeric]
-        x_matrix = sparse.hstack(
-            [text_matrices[split_name], categorical_matrices[split_name], numeric_matrices[split_name]],
-            format="csr",
-        )
-        write_sparse_split(args.out, split_name, x_matrix, y_arrays[split_name], splits[split_name])
+        x_matrix = np.hstack(
+            [text_matrices[split_name], categorical_matrices[split_name], numeric_matrices[split_name]]
+        ).astype(np.float32)
+        write_split(args.out, split_name, x_matrix, y_arrays[split_name], splits[split_name])
 
     metadata = {
         "source_csv": str(args.csv),

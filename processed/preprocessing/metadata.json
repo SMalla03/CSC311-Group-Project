@@ -1,5 +1,5 @@
 {
-  "source_csv": "data\\training_data_202601.csv",
+  "source_csv": "C:\\Users\\Franc\\OneDrive\\Documents\\UofT\\Winter 2026\\CSC311\\CSC311-Group-Project\\data\\training_data_202601.csv",
   "random_seed": 311,
   "group_column": "unique_id",
   "target_column": "Painting",
