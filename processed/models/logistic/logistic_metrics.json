@@ -1,0 +1,161 @@
+{
+  "train": {
+    "accuracy": 0.9728583545377438,
+    "per_class": [
+      {
+        "label": "The Persistence of Memory",
+        "precision": 0.9947780678851175,
+        "recall": 0.9694656488549618,
+        "f1": 0.9819587628865979,
+        "support": 393
+      },
+      {
+        "label": "The Starry Night",
+        "precision": 0.9920634920634921,
+        "recall": 0.9541984732824428,
+        "f1": 0.9727626459143969,
+        "support": 393
+      },
+      {
+        "label": "The Water Lily Pond",
+        "precision": 0.9354066985645934,
+        "recall": 0.9949109414758269,
+        "f1": 0.9642416769420469,
+        "support": 393
+      }
+    ],
+    "macro_avg": {
+      "precision": 0.9740827528377344,
+      "recall": 0.9728583545377439,
+      "f1": 0.9729876952476806,
+      "support": 1179
+    },
+    "weighted_avg": {
+      "f1": 0.9729876952476807,
+      "support": 1179
+    },
+    "confusion_matrix": [
+      [
+        381,
+        1,
+        11
+      ],
+      [
+        2,
+        375,
+        16
+      ],
+      [
+        0,
+        2,
+        391
+      ]
+    ]
+  },
+  "validation": {
+    "accuracy": 0.8720238095238095,
+    "per_class": [
+      {
+        "label": "The Persistence of Memory",
+        "precision": 0.9065420560747663,
+        "recall": 0.8660714285714286,
+        "f1": 0.8858447488584474,
+        "support": 112
+      },
+      {
+        "label": "The Starry Night",
+        "precision": 0.8712871287128713,
+        "recall": 0.7857142857142857,
+        "f1": 0.8262910798122066,
+        "support": 112
+      },
+      {
+        "label": "The Water Lily Pond",
+        "precision": 0.84375,
+        "recall": 0.9642857142857143,
+        "f1": 0.8999999999999999,
+        "support": 112
+      }
+    ],
+    "macro_avg": {
+      "precision": 0.8738597282625459,
+      "recall": 0.8720238095238096,
+      "f1": 0.870711942890218,
+      "support": 336
+    },
+    "weighted_avg": {
+      "f1": 0.8707119428902178,
+      "support": 336
+    },
+    "confusion_matrix": [
+      [
+        97,
+        11,
+        4
+      ],
+      [
+        8,
+        88,
+        16
+      ],
+      [
+        2,
+        2,
+        108
+      ]
+    ]
+  },
+  "test": {
+    "accuracy": 0.8830409356725146,
+    "per_class": [
+      {
+        "label": "The Persistence of Memory",
+        "precision": 0.8852459016393442,
+        "recall": 0.9473684210526315,
+        "f1": 0.9152542372881356,
+        "support": 57
+      },
+      {
+        "label": "The Starry Night",
+        "precision": 0.8979591836734694,
+        "recall": 0.7719298245614035,
+        "f1": 0.8301886792452831,
+        "support": 57
+      },
+      {
+        "label": "The Water Lily Pond",
+        "precision": 0.8688524590163934,
+        "recall": 0.9298245614035088,
+        "f1": 0.8983050847457625,
+        "support": 57
+      }
+    ],
+    "macro_avg": {
+      "precision": 0.884019181443069,
+      "recall": 0.8830409356725145,
+      "f1": 0.881249333759727,
+      "support": 171
+    },
+    "weighted_avg": {
+      "f1": 0.8812493337597271,
+      "support": 171
+    },
+    "confusion_matrix": [
+      [
+        54,
+        2,
+        1
+      ],
+      [
+        6,
+        44,
+        7
+      ],
+      [
+        1,
+        3,
+        53
+      ]
+    ]
+  }
+}
