@@ -5,10 +5,10 @@ def naive_bayes_map(X, t, alpha = 1.0):
     
     N, vocab_size = X.shape[0], X.shape[1]
     
-    # Calculate the class probabilities p(c) for each class c via counts
-    pi_0 = np.sum(t == 0) / N
-    pi_1 = np.sum(t == 1) / N
-    pi_2 = np.sum(t == 2) / N
+    # Calculate the class probabilities p(c) for each class c via multinomial prior  
+    pi_0 = (np.sum(t == 0)+alpha) / (N + 3 * alpha)
+    pi_1 = (np.sum(t == 1)+alpha) / (N + 3 * alpha)
+    pi_2 = (np.sum(t == 2)+alpha) / (N + 3 * alpha)
     pi = np.array([pi_0, pi_1, pi_2])
     
     theta = np.zeros([vocab_size, 3])
@@ -17,6 +17,10 @@ def naive_bayes_map(X, t, alpha = 1.0):
     X_pom = X[t == 0]
     X_sn = X[t == 1]
     X_wlp = X[t == 2]
+    
+    X_pom_binary = (X_pom > 0).astype(int)
+    X_sn_binary = (X_sn > 0).astype(int)
+    X_wlp_binary = (X_wlp > 0).astype(int)
     
     # Total tf-idf mass for each word in the vocab for each class
     N_xi_given_0 = X_pom.sum(axis=0)
