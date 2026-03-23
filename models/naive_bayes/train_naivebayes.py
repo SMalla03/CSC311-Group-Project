@@ -52,13 +52,13 @@ def accuracy(y, t):
 def main():
     # Load the pre-processed data
     feature_names = json.load(open("processed\\preprocessing\\feature_names.json", "r", encoding="utf-8"))
-    X_train = sparse.load_npz("processed\\preprocessing\\train_X.npz").astype(np.float32).toarray()
+    X_train = np.load("processed\\preprocessing\\train_X.npz")["data"]
     y_train = np.load("processed\\preprocessing\\train_y.npy")
 
-    X_val = sparse.load_npz("processed\\preprocessing\\val_X.npz").astype(np.float32).toarray()
+    X_val = np.load("processed\\preprocessing\\val_X.npz")["data"]
     y_val = np.load("processed\\preprocessing\\val_y.npy")
     
-    X_test = sparse.load_npz("processed\\preprocessing\\test_X.npz").astype(np.float32).toarray()
+    X_test = np.load("processed\\preprocessing\\test_X.npz")["data"]
     y_test = np.load("processed\\preprocessing\\test_y.npy")
     
     # Pick out vocab from the feature names
@@ -90,7 +90,8 @@ def main():
     print(f"Training Accuracy: {accuracy(y_train_pred, y_train):.4f}")
     print(f"Validation Accuracy: {accuracy(y_val_pred, y_val):.4f}")
     print(f"Test Accuracy: {accuracy(y_test_pred, y_test):.4f}")
-
+ 
+    
 if __name__ == "__main__":
     
     main()
