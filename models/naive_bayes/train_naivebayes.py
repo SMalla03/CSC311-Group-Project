@@ -69,7 +69,7 @@ def main():
     X_test_bow = X_test[:, :len(vocab)]
     
     # Tune alpha as a hyperparameter
-    alphas = np.linspace(0.01, 2.0, 20)
+    alphas = np.linspace(0.01, 10, 20)
     accs = []
     for alpha in alphas:
         p_c, p_x_given_c = naive_bayes_map(X_train_bow, y_train, alpha)
