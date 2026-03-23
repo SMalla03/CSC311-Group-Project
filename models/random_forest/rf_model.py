@@ -9,6 +9,7 @@ Usage:
 
 import argparse
 import json
+import pickle
 import sys
 from pathlib import Path
 
@@ -36,9 +37,10 @@ from models.common import (  # noqa: E402
 DEFAULT_PREPROCESSED_DIR = PROJECT_ROOT / "processed" / "preprocessing"
 DEFAULT_OUTPUT_DIR = PROJECT_ROOT / "processed" / "models" / "random_forest"
 DEFAULT_MODEL_PATH = DEFAULT_OUTPUT_DIR / "rf_model.joblib"
+DEFAULT_INFERENCE_PARAMS_PATH = DEFAULT_OUTPUT_DIR / "rf_inference_params.pkl"
 DEFAULT_FEATURE_SET = "full"
 DEFAULT_N_ESTIMATORS = 50
-DEFAULT_MAX_DEPTH: int | None = None
+DEFAULT_MAX_DEPTH: int | None = 5
 DEFAULT_MIN_SAMPLES_SPLIT = 2
 DEFAULT_MIN_SAMPLES_LEAF = 1
 DEFAULT_MAX_FEATURES = "sqrt"
@@ -208,6 +210,28 @@ def write_performance_summary(path: Path, run_summary: dict[str, object], split_
     path.write_text("\n".join(lines), encoding="utf-8")
 
 
+def export_inference_params(path: Path, model: RandomForestClassifier, labels: list[str], feature_set: str) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    payload = {
+        "labels": labels,
+        "feature_set": feature_set,
+        "trees": [],
+    }
+    for estimator in model.estimators_:
+        tree = estimator.tree_
+        payload["trees"].append(
+            {
+                "children_left": tree.children_left.tolist(),
+                "children_right": tree.children_right.tolist(),
+                "feature": tree.feature.tolist(),
+                "threshold": tree.threshold.tolist(),
+                "value": tree.value[:, 0, :].tolist(),
+            }
+        )
+    with path.open("wb") as handle:
+        pickle.dump(payload, handle)
+
+
 def train_model(
     preprocessed_dir: Path,
     output_dir: Path,
@@ -260,6 +284,7 @@ def train_model(
     }
     output_dir.mkdir(parents=True, exist_ok=True)
     joblib.dump({"model": model, "labels": label_names, "feature_set": feature_set}, model_path)
+    export_inference_params(output_dir / DEFAULT_INFERENCE_PARAMS_PATH.name, model, label_names, feature_set)
     write_json(output_dir / "rf_metrics.json", split_reports)
     write_training_report(output_dir / "rf_training_report.md", run_summary, split_reports)
     write_feature_summary(output_dir / "rf_feature_summary.md", feature_names, model.feature_importances_)

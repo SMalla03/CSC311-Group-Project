@@ -6,7 +6,6 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
-from scipy import sparse
 
 from preprocessing import preprocess_dataset as prep
 
@@ -30,7 +29,8 @@ def load_preprocessor(processed_dir: Path | str) -> dict:
 
 
 def dense_load(path: Path | str) -> np.ndarray:
-    return sparse.load_npz(Path(path)).astype(np.float32).toarray()
+    with np.load(Path(path)) as loaded:
+        return loaded["data"].astype(np.float32)
 
 
 def load_feature_names(processed_dir: Path | str) -> list[str]:
@@ -74,11 +74,11 @@ def preprocess_frame(frame: pd.DataFrame, preprocessor: dict) -> np.ndarray:
     for feature_name, source_column in categorical_columns.items():
         values = frame[source_column].map(prep.split_multivalue_cell)
         categorical_parts.append(categorical_encoders[feature_name].transform(values))
-    categorical_matrix = sparse.hstack(categorical_parts, format="csr", dtype=np.float32)
+    categorical_matrix = np.hstack(categorical_parts).astype(np.float32)
 
-    numeric_matrix = sparse.csr_matrix(numeric_processor.transform(frame))
-    full_matrix = sparse.hstack([text_matrix, categorical_matrix, numeric_matrix], format="csr", dtype=np.float32)
-    return full_matrix.toarray().astype(np.float32)
+    numeric_matrix = numeric_processor.transform(frame)
+    full_matrix = np.hstack([text_matrix, categorical_matrix, numeric_matrix]).astype(np.float32)
+    return full_matrix
 
 
 def read_rows(csv_path: Path | str, preprocessor: dict) -> pd.DataFrame:

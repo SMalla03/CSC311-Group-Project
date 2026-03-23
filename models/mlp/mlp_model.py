@@ -36,8 +36,9 @@ from models.common import (  # noqa: E402
 DEFAULT_PREPROCESSED_DIR = PROJECT_ROOT / "processed" / "preprocessing"
 DEFAULT_OUTPUT_DIR = PROJECT_ROOT / "processed" / "models" / "mlp"
 DEFAULT_MODEL_PATH = DEFAULT_OUTPUT_DIR / "mlp_model.joblib"
+DEFAULT_INFERENCE_PARAMS_PATH = DEFAULT_OUTPUT_DIR / "mlp_inference_params.npz"
 DEFAULT_HIDDEN_DIM = 128
-DEFAULT_LEARNING_RATE = 0.001
+DEFAULT_LEARNING_RATE = 0.01
 DEFAULT_WEIGHT_DECAY = 1e-4
 DEFAULT_BATCH_SIZE = 64
 DEFAULT_EPOCHS = 300
@@ -252,6 +253,19 @@ def write_performance_summary(path: Path, split_reports: dict[str, dict[str, obj
     path.write_text("\n".join(lines), encoding="utf-8")
 
 
+def export_inference_params(path: Path, model: MLPClassifier, labels: list[str], feature_set: str) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    np.savez_compressed(
+        path,
+        w1=model.coefs_[0].astype(np.float32),
+        b1=model.intercepts_[0].astype(np.float32),
+        w2=model.coefs_[1].astype(np.float32),
+        b2=model.intercepts_[1].astype(np.float32),
+        labels=np.array(labels, dtype=object),
+        feature_set=np.array(feature_set, dtype=object),
+    )
+
+
 def train_model(
     preprocessed_dir: Path,
     output_dir: Path,
@@ -322,6 +336,7 @@ def train_model(
 
     output_dir.mkdir(parents=True, exist_ok=True)
     joblib.dump({"model": model, "labels": label_names, "feature_set": feature_set}, model_path)
+    export_inference_params(output_dir / DEFAULT_INFERENCE_PARAMS_PATH.name, model, label_names, feature_set)
     write_json(output_dir / "mlp_metrics.json", split_reports)
     write_training_report(output_dir / "mlp_training_report.md", run_summary, split_reports)
     write_weight_summary(output_dir / "mlp_weight_summary.md", model, feature_names, label_names, DEFAULT_TOP_FEATURES)

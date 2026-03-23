@@ -9,188 +9,188 @@ Each class score is computed from the hidden layer through the second weight mat
 
 ### The Persistence of Memory
 
-- Output bias: `0.008585`
+- Output bias: `0.001623`
 
 | Hidden Unit | Weight To Class |
 | --- | ---: |
-| 93 | -0.271620 |
-| 23 | 0.266124 |
-| 5 | -0.261505 |
-| 90 | 0.261393 |
-| 61 | 0.261125 |
-| 120 | -0.260748 |
-| 111 | -0.260518 |
-| 91 | -0.257131 |
-| 28 | 0.254500 |
-| 6 | 0.252913 |
-| 29 | -0.252871 |
-| 115 | -0.251629 |
+| 5 | -0.320909 |
+| 91 | -0.310106 |
+| 115 | -0.303113 |
+| 120 | -0.298700 |
+| 111 | -0.285900 |
+| 93 | -0.283629 |
+| 42 | -0.279845 |
+| 6 | 0.276366 |
+| 118 | 0.275521 |
+| 90 | 0.272021 |
+| 65 | 0.271634 |
+| 81 | -0.270496 |
 
 ### The Starry Night
 
-- Output bias: `0.059494`
+- Output bias: `0.080792`
 
 | Hidden Unit | Weight To Class |
 | --- | ---: |
-| 3 | 0.279492 |
-| 72 | -0.277073 |
-| 9 | -0.273161 |
-| 64 | -0.266746 |
-| 81 | -0.265117 |
-| 8 | -0.263738 |
-| 57 | -0.263716 |
-| 37 | -0.263334 |
-| 99 | -0.263020 |
-| 114 | 0.261186 |
-| 85 | -0.260549 |
-| 21 | 0.260350 |
+| 21 | 0.293778 |
+| 72 | -0.285843 |
+| 9 | -0.278950 |
+| 107 | 0.275549 |
+| 30 | 0.269959 |
+| 57 | -0.267646 |
+| 99 | -0.266676 |
+| 2 | -0.261986 |
+| 58 | 0.258731 |
+| 114 | 0.257917 |
+| 81 | -0.257757 |
+| 93 | 0.254936 |
 
 ### The Water Lily Pond
 
-- Output bias: `0.049299`
+- Output bias: `0.018782`
 
 | Hidden Unit | Weight To Class |
 | --- | ---: |
-| 24 | -0.286922 |
-| 30 | -0.281593 |
-| 73 | -0.266324 |
-| 25 | -0.261632 |
-| 124 | 0.254025 |
-| 77 | -0.253224 |
-| 60 | -0.250959 |
-| 127 | 0.248426 |
-| 0 | -0.247839 |
-| 85 | 0.245738 |
-| 82 | -0.244132 |
-| 119 | -0.240647 |
+| 30 | -0.308622 |
+| 73 | -0.290055 |
+| 60 | -0.284201 |
+| 25 | -0.281667 |
+| 122 | -0.269079 |
+| 24 | -0.267530 |
+| 94 | 0.265124 |
+| 44 | 0.253449 |
+| 13 | -0.247954 |
+| 26 | 0.245922 |
+| 62 | -0.243749 |
+| 104 | 0.243685 |
 
 
 ## Hidden Units And Their Strongest Input Features
 
 These are the hidden units with the strongest downstream effect on at least one class.
 
-### Hidden Unit 24
+### Hidden Unit 5
 
-- Hidden bias: `0.056570`
-- Strongest output class: `The Water Lily Pond`
-- Output weight to that class: `-0.286922`
+- Hidden bias: `0.111563`
+- Strongest output class: `The Persistence of Memory`
+- Output weight to that class: `-0.320909`
 
 | Input Feature | Weight | abs(weight) |
 | --- | ---: | ---: |
-| text:how time | -0.099056 | 0.099056 |
-| text:stars | 0.088719 | 0.088719 |
-| text:ice cream | 0.084407 | 0.084407 |
-| text:emotional | 0.081995 | 0.081995 |
-| text:night | 0.081140 | 0.081140 |
-| text:hum | -0.080955 | 0.080955 |
-| text:awe | 0.080530 | 0.080530 |
-| text:cream | 0.079462 | 0.079462 |
-| text:think how | -0.079456 | 0.079456 |
-| text:nature | -0.078843 | 0.078843 |
-| text:salad | -0.078181 | 0.078181 |
-| text:warped clocks | -0.077847 | 0.077847 |
+| text:time | -0.158760 | 0.158760 |
+| text:soundtrack | 0.155844 | 0.155844 |
+| prominent_colours | -0.141605 | 0.141605 |
+| text:sky | 0.138800 | 0.138800 |
+| text:green | 0.138039 | 0.138039 |
+| text:full | 0.135781 | 0.135781 |
+| text:jazz | 0.135019 | 0.135019 |
+| room=Office | 0.134423 | 0.134423 |
+| text:looking | 0.134145 | 0.134145 |
+| text:ice cream | 0.131462 | 0.131462 |
+| text:something | 0.131285 | 0.131285 |
+| text:light | 0.131066 | 0.131066 |
+
+### Hidden Unit 91
+
+- Hidden bias: `0.084561`
+- Strongest output class: `The Persistence of Memory`
+- Output weight to that class: `-0.310106`
+
+| Input Feature | Weight | abs(weight) |
+| --- | ---: | ---: |
+| text:calm | 0.157068 | 0.157068 |
+| text:wind | 0.155410 | 0.155410 |
+| text:time | -0.149774 | 0.149774 |
+| text:joyful | 0.148996 | 0.148996 |
+| text:awe | 0.143505 | 0.143505 |
+| season=Winter | 0.143134 | 0.143134 |
+| room=Bedroom | 0.136369 | 0.136369 |
+| text:calm relaxed | 0.135700 | 0.135700 |
+| text:hopeful | 0.134012 | 0.134012 |
+| text:sounds | 0.132516 | 0.132516 |
+| room=Bathroom | 0.132361 | 0.132361 |
+| view_with=Family Members | 0.132272 | 0.132272 |
 
 ### Hidden Unit 30
 
-- Hidden bias: `0.068552`
+- Hidden bias: `0.120042`
 - Strongest output class: `The Water Lily Pond`
-- Output weight to that class: `-0.281593`
+- Output weight to that class: `-0.308622`
 
 | Input Feature | Weight | abs(weight) |
 | --- | ---: | ---: |
-| text:ice cream | 0.086939 | 0.086939 |
-| room=Bedroom | 0.084634 | 0.084634 |
-| text:happy | -0.084315 | 0.084315 |
-| text:stars | 0.083554 | 0.083554 |
-| text:city | 0.079875 | 0.079875 |
-| text:sad | 0.078662 | 0.078662 |
-| text:patterns | 0.075708 | 0.075708 |
-| text:icecream | 0.075697 | 0.075697 |
-| text:rising falling | 0.075526 | 0.075526 |
-| text:same time | 0.075456 | 0.075456 |
-| text:birds chirping | -0.074600 | 0.074600 |
-| text:soup | 0.073798 | 0.073798 |
+| room=Bedroom | 0.158059 | 0.158059 |
+| text:happy | -0.144865 | 0.144865 |
+| text:dreamy | 0.141925 | 0.141925 |
+| text:stars | 0.141212 | 0.141212 |
+| text:ice cream | 0.140814 | 0.140814 |
+| text:sad | 0.135264 | 0.135264 |
+| text:rising falling | 0.134602 | 0.134602 |
+| text:blueberry | 0.132385 | 0.132385 |
+| text:nature | -0.130482 | 0.130482 |
+| text:rising | 0.128139 | 0.128139 |
+| text:instrumental | 0.127797 | 0.127797 |
+| season=Winter | 0.127322 | 0.127322 |
 
-### Hidden Unit 3
+### Hidden Unit 115
 
-- Hidden bias: `-0.002892`
-- Strongest output class: `The Starry Night`
-- Output weight to that class: `0.279492`
-
-| Input Feature | Weight | abs(weight) |
-| --- | ---: | ---: |
-| season=Winter | 0.106951 | 0.106951 |
-| text:night sky | 0.084183 | 0.084183 |
-| text:swirling | 0.082247 | 0.082247 |
-| text:ice | 0.081673 | 0.081673 |
-| text:sky | 0.081208 | 0.081208 |
-| text:cheerful | -0.079538 | 0.079538 |
-| text:cold | 0.078418 | 0.078418 |
-| text:due | 0.077695 | 0.077695 |
-| text:nature | -0.075691 | 0.075691 |
-| text:blueberry pie | 0.073330 | 0.073330 |
-| text:cream | 0.073271 | 0.073271 |
-| text:lively | 0.073254 | 0.073254 |
-
-### Hidden Unit 72
-
-- Hidden bias: `0.044266`
-- Strongest output class: `The Starry Night`
-- Output weight to that class: `-0.277073`
-
-| Input Feature | Weight | abs(weight) |
-| --- | ---: | ---: |
-| season=Winter | -0.097681 | 0.097681 |
-| text:without | 0.085946 | 0.085946 |
-| text:here | 0.084635 | 0.084635 |
-| text:garden | 0.083441 | 0.083441 |
-| text:sky | -0.080284 | 0.080284 |
-| text:gentle | 0.076208 | 0.076208 |
-| text:moments | 0.076194 | 0.076194 |
-| text:sand | 0.076112 | 0.076112 |
-| text:empty | 0.075067 | 0.075067 |
-| text:beneath | 0.074824 | 0.074824 |
-| text:only | 0.074164 | 0.074164 |
-| text:ticking | 0.073721 | 0.073721 |
-
-### Hidden Unit 9
-
-- Hidden bias: `0.017100`
-- Strongest output class: `The Starry Night`
-- Output weight to that class: `-0.273161`
-
-| Input Feature | Weight | abs(weight) |
-| --- | ---: | ---: |
-| season=Fall | 0.100134 | 0.100134 |
-| text:time | 0.096294 | 0.096294 |
-| text:sky | -0.091227 | 0.091227 |
-| text:melting | 0.085648 | 0.085648 |
-| text:how time | 0.084504 | 0.084504 |
-| text:everything | 0.081641 | 0.081641 |
-| text:passage | 0.078700 | 0.078700 |
-| text:night | -0.078124 | 0.078124 |
-| text:somewhat | 0.077064 | 0.077064 |
-| text:concept | 0.075308 | 0.075308 |
-| text:space | 0.075144 | 0.075144 |
-| text:hope | 0.074334 | 0.074334 |
-
-### Hidden Unit 93
-
-- Hidden bias: `0.026132`
+- Hidden bias: `0.077655`
 - Strongest output class: `The Persistence of Memory`
-- Output weight to that class: `-0.271620`
+- Output weight to that class: `-0.303113`
 
 | Input Feature | Weight | abs(weight) |
 | --- | ---: | ---: |
-| text:wonder | 0.097982 | 0.097982 |
-| text:stars | 0.092083 | 0.092083 |
-| text:garden | -0.089053 | 0.089053 |
-| text:awe | 0.085903 | 0.085903 |
-| text:sky | 0.085374 | 0.085374 |
-| text:swirling | 0.082294 | 0.082294 |
-| text:blueberry | 0.081728 | 0.081728 |
-| room=Bedroom | 0.081211 | 0.081211 |
-| season=Spring | -0.079157 | 0.079157 |
-| text:chocolate | 0.078553 | 0.078553 |
-| text:ice cream | 0.077669 | 0.077669 |
-| view_with=Friends | 0.077392 | 0.077392 |
+| text:time | -0.166004 | 0.166004 |
+| text:low | -0.161057 | 0.161057 |
+| text:light | 0.152993 | 0.152993 |
+| text:bright | 0.144102 | 0.144102 |
+| text:strawberry | 0.142000 | 0.142000 |
+| text:upbeat | 0.141948 | 0.141948 |
+| text:flute | 0.140189 | 0.140189 |
+| room=Bedroom | 0.138072 | 0.138072 |
+| text:salad | 0.136303 | 0.136303 |
+| feel_sombre | -0.131756 | 0.131756 |
+| text:happy | 0.128168 | 0.128168 |
+| text:well | 0.128085 | 0.128085 |
+
+### Hidden Unit 120
+
+- Hidden bias: `0.037848`
+- Strongest output class: `The Persistence of Memory`
+- Output weight to that class: `-0.298700`
+
+| Input Feature | Weight | abs(weight) |
+| --- | ---: | ---: |
+| text:joyful | 0.159622 | 0.159622 |
+| season=Spring | 0.153618 | 0.153618 |
+| text:flowing | 0.151371 | 0.151371 |
+| view_with=Family Members | 0.150041 | 0.150041 |
+| season=Winter | 0.146234 | 0.146234 |
+| room=Bedroom | 0.142367 | 0.142367 |
+| text:salad | 0.142114 | 0.142114 |
+| text:flute | 0.139718 | 0.139718 |
+| text:dreamy | 0.137685 | 0.137685 |
+| text:night | 0.133809 | 0.133809 |
+| text:peaceful | 0.133333 | 0.133333 |
+| text:strawberry | 0.131017 | 0.131017 |
+
+### Hidden Unit 21
+
+- Hidden bias: `0.103037`
+- Strongest output class: `The Starry Night`
+- Output weight to that class: `0.293778`
+
+| Input Feature | Weight | abs(weight) |
+| --- | ---: | ---: |
+| text:jazz | 0.156143 | 0.156143 |
+| text:stars | 0.148130 | 0.148130 |
+| text:cream | 0.147270 | 0.147270 |
+| text:time | -0.143596 | 0.143596 |
+| season=Winter | 0.143043 | 0.143043 |
+| text:sky | 0.139534 | 0.139534 |
+| text:tempo | 0.134780 | 0.134780 |
+| text:background | 0.134306 | 0.134306 |
+| text:see | 0.133481 | 0.133481 |
+| room=Living Room | 0.133441 | 0.133441 |
+| text:wonder | 0.129905 | 0.129905 |
+| text:small | 0.128478 | 0.128478 |
