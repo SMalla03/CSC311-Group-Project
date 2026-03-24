@@ -6,13 +6,13 @@ Tie-breaking rule: sum the tied classes' predicted probabilities across the incl
 ## Train Results
 
 - Ensemble accuracy: `0.9796`
-- Ties resolved by summed probabilities: `0`
+- Ties resolved by summed probabilities: `1`
 
 ### Per-Model Accuracy
 
 | Model | Accuracy |
 | --- | ---: |
-| naive_bayes | 0.9483 |
+| naive_bayes | 0.8999 |
 | random_forest | 0.9796 |
 | logistic | 0.9729 |
 
@@ -35,14 +35,14 @@ Confusion matrix (`rows=true`, `cols=predicted`):
 
 ## Validation Results
 
-- Ensemble accuracy: `0.8958`
+- Ensemble accuracy: `0.8929`
 - Ties resolved by summed probabilities: `3`
 
 ### Per-Model Accuracy
 
 | Model | Accuracy |
 | --- | ---: |
-| naive_bayes | 0.8155 |
+| naive_bayes | 0.8274 |
 | random_forest | 0.9018 |
 | logistic | 0.8720 |
 
@@ -51,8 +51,8 @@ Confusion matrix (`rows=true`, `cols=predicted`):
 | Class | Precision | Recall | F1 | Support |
 | --- | ---: | ---: | ---: | ---: |
 | The Persistence of Memory | 0.9182 | 0.9018 | 0.9099 | 112 |
-| The Starry Night | 0.9109 | 0.8214 | 0.8638 | 112 |
-| The Water Lily Pond | 0.8640 | 0.9643 | 0.9114 | 112 |
+| The Starry Night | 0.9020 | 0.8214 | 0.8598 | 112 |
+| The Water Lily Pond | 0.8629 | 0.9554 | 0.9068 | 112 |
 
 Confusion matrix (`rows=true`, `cols=predicted`):
 
@@ -60,7 +60,7 @@ Confusion matrix (`rows=true`, `cols=predicted`):
 | --- | --- | --- | --- |
 | The Persistence of Memory | 101 | 7 | 4 |
 | The Starry Night | 7 | 92 | 13 |
-| The Water Lily Pond | 2 | 2 | 108 |
+| The Water Lily Pond | 2 | 3 | 107 |
 
 
 ## Test Results
@@ -72,7 +72,7 @@ Confusion matrix (`rows=true`, `cols=predicted`):
 
 | Model | Accuracy |
 | --- | ---: |
-| naive_bayes | 0.8129 |
+| naive_bayes | 0.8246 |
 | random_forest | 0.9006 |
 | logistic | 0.8830 |
 

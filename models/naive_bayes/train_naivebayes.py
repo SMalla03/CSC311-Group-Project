@@ -48,7 +48,7 @@ def naive_bayes_map(X, t, alpha, method = "binary"):
         N_1 = N_xi_given_1.sum()
         N_2 = N_xi_given_2.sum()
         
-        # Calculate the p(xi | c) using a multinomial prior with Laplace smoothing
+        # Calculate the p(xi | c) using a multinomial prior 
         theta[:, 0] = (N_xi_given_0 + alpha) / (N_0 + vocab_size * alpha)
         theta[:, 1] = (N_xi_given_1 + alpha) / (N_1 + vocab_size * alpha)
         theta[:, 2] = (N_xi_given_2 + alpha) / (N_2 + vocab_size * alpha)

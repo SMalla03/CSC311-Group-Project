@@ -248,7 +248,7 @@ def main() -> None:
     x_val_text = x_val[:, :text_feature_count]
     x_test_text = x_test[:, :text_feature_count]
 
-    nb_alpha = 0.22
+    nb_alpha = 6.32
     nb_train_pred, nb_train_prob = naive_bayes_predict_with_probs(x_train_text, y_train, x_train_text, nb_alpha)
     nb_val_pred, nb_val_prob = naive_bayes_predict_with_probs(x_train_text, y_train, x_val_text, nb_alpha)
     nb_test_pred, nb_test_prob = naive_bayes_predict_with_probs(x_train_text, y_train, x_test_text, nb_alpha)
