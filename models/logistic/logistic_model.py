@@ -207,7 +207,7 @@ def train_model(
         max_iter=max_iter,
         class_weight=class_weight,
         solver="lbfgs",
-        multi_class="multinomial",
+        #multi_class="multinomial",
         random_state=seed,
     )
     model.fit(x_train, y_train)

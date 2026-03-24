@@ -31,7 +31,7 @@
       "support": 1179
     },
     "weighted_avg": {
-      "f1": 0.9729876952476807,
+      "f1": 0.9729876952476805,
       "support": 1179
     },
     "confusion_matrix": [
@@ -84,7 +84,7 @@
       "support": 336
     },
     "weighted_avg": {
-      "f1": 0.8707119428902178,
+      "f1": 0.870711942890218,
       "support": 336
     },
     "confusion_matrix": [
