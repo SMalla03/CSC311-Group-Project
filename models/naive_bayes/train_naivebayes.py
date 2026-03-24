@@ -68,17 +68,7 @@ def make_prediction(X, pi, theta):
 def accuracy(y, t):
     return np.mean(y == t)
 
-def main():
-    # Load the pre-processed data
-    feature_names = json.load(open("processed\\preprocessing\\feature_names.json", "r", encoding="utf-8"))
-    X_train = np.load("processed\\preprocessing\\train_X.npz")["data"]
-    y_train = np.load("processed\\preprocessing\\train_y.npy")
-
-    X_val = np.load("processed\\preprocessing\\val_X.npz")["data"]
-    y_val = np.load("processed\\preprocessing\\val_y.npy")
-    
-    X_test = np.load("processed\\preprocessing\\test_X.npz")["data"]
-    y_test = np.load("processed\\preprocessing\\test_y.npy")
+def train_nb(feature_names, X_train, y_train, X_val, y_val, X_test, y_test):
     
     # Pick out vocab from the feature names
     vocab = [f.split(":")[1] for f in feature_names if isinstance(f, str) and f.startswith("text:")]
@@ -101,6 +91,10 @@ def main():
     
     # Train the final model with the best alpha and evaluate on the test set
     p_c, p_x_given_c = naive_bayes_map(X_train_bow, y_train, best_alpha, method = bow_type)
+    
+    return p_c, p_x_given_c, best_alpha, bow_type, X_train_bow, X_val_bow, X_test_bow
+
+def eval_nb(p_c, p_x_given_c, X_train_bow, y_train, X_val_bow, y_val, X_test_bow, y_test, best_alpha, bow_type):
     
     y_train_pred = make_prediction(X_train_bow, p_c, p_x_given_c)
     y_val_pred = make_prediction(X_val_bow, p_c, p_x_given_c)
@@ -125,16 +119,18 @@ def main():
     print(f"Validation Accuracy: {accuracy(y_val_pred_sklearn, y_val):.4f}")
     print(f"Test Accuracy: {accuracy(y_test_pred_sklearn, y_test):.4f}")
     
-    plt.figure(figsize=(10, 6))
-    plt.title(f"Validation Accuracy vs Alpha for MAP Naive Bayes ({bow_type} features)")
-    plt.xlabel("Alpha")
-    plt.ylabel("Validation Accuracy")
-    plt.axvline(x=best_alpha, color='red', linestyle='--', label=f'Best alpha: {best_alpha:.2f}')
-    plt.grid(True)
-    plt.scatter(alphas, accs)
-    plt.legend()
-    plt.show()
-    
 if __name__ == "__main__":
     
-    main()
+    # Load the pre-processed data
+    feature_names = json.load(open("processed\\preprocessing\\feature_names.json", "r", encoding="utf-8"))
+    X_train = np.load("processed\\preprocessing\\train_X.npz")["data"]
+    y_train = np.load("processed\\preprocessing\\train_y.npy")
+
+    X_val = np.load("processed\\preprocessing\\val_X.npz")["data"]
+    y_val = np.load("processed\\preprocessing\\val_y.npy")
+    
+    X_test = np.load("processed\\preprocessing\\test_X.npz")["data"]
+    y_test = np.load("processed\\preprocessing\\test_y.npy")
+    
+    p_c, p_x_given_c, best_alpha, bow_type, X_train_bow, X_val_bow, X_test_bow = train_nb(feature_names, X_train, y_train, X_val, y_val, X_test, y_test)
+    eval_nb(p_c, p_x_given_c, X_train_bow, y_train, X_val_bow, y_val, X_test_bow, y_test, best_alpha, bow_type)
