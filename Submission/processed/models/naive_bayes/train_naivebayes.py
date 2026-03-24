@@ -1,7 +1,5 @@
 import numpy as np
 import json
-from sklearn.naive_bayes import MultinomialNB
-
 
 def naive_bayes_map(X, t, alpha, method = "binary"):
     
@@ -70,7 +68,7 @@ def make_prediction(X, pi, theta):
 def accuracy(y, t):
     return np.mean(y == t)
 
-def tune_alpha(X_train_bow, y_train, X_val_bow, y_val, alphas):
+def tune_alpha(X_train_bow, y_train, X_val_bow, y_val, alphas, bow_type):
     # Tune alpha as a hyperparameter
     
     accs = []
@@ -82,7 +80,7 @@ def tune_alpha(X_train_bow, y_train, X_val_bow, y_val, alphas):
     best_alpha = alphas[np.argmax(accs)]
     return best_alpha
 
-def train_nb(feature_names, X_train, y_train, X_val, y_val, X_test, y_test):
+def train_nb(feature_names, X_train, y_train, X_val, y_val):
     
     # Pick out vocab from the feature names
     vocab = [f.split(":")[1] for f in feature_names if isinstance(f, str) and f.startswith("text:")]
@@ -90,55 +88,28 @@ def train_nb(feature_names, X_train, y_train, X_val, y_val, X_test, y_test):
     # bag of words data matrices with tf-idf features
     X_train_bow = X_train[:, :len(vocab)]
     X_val_bow = X_val[:, :len(vocab)]
-    X_test_bow = X_test[:, :len(vocab)]
     
     bow_type = "binary"
     # Tuning alpha as a hyperparameter using the validation set
     alphas = np.linspace(0.01, 10, 20)
-    best_alpha = tune_alpha(X_train_bow, y_train, X_val_bow, y_val, alphas)
+    best_alpha = tune_alpha(X_train_bow, y_train, X_val_bow, y_val, alphas, bow_type)
     
     # Train the final model with the best alpha and evaluate on the test set
     p_c, p_x_given_c = naive_bayes_map(X_train_bow, y_train, best_alpha, method = bow_type)
     
-    return p_c, p_x_given_c, best_alpha, bow_type, X_train_bow, X_val_bow, X_test_bow
+    return p_c, p_x_given_c, best_alpha, bow_type, X_train_bow, X_val_bow
+    
+# if __name__ == "__main__":
+    
+#     # Load the pre-processed data
+#     feature_names = json.load(open("processed\\preprocessing\\feature_names.json", "r", encoding="utf-8"))
+#     X_train = np.load("processed\\preprocessing\\train_X.npz")["data"]
+#     y_train = np.load("processed\\preprocessing\\train_y.npy")
 
-def eval_nb(p_c, p_x_given_c, X_train_bow, y_train, X_val_bow, y_val, X_test_bow, y_test, best_alpha, bow_type):
+#     X_val = np.load("processed\\preprocessing\\val_X.npz")["data"]
+#     y_val = np.load("processed\\preprocessing\\val_y.npy")
     
-    y_train_pred = make_prediction(X_train_bow, p_c, p_x_given_c)
-    y_val_pred = make_prediction(X_val_bow, p_c, p_x_given_c)
-    y_test_pred = make_prediction(X_test_bow, p_c, p_x_given_c)
+#     X_test = np.load("processed\\preprocessing\\test_X.npz")["data"]
+#     y_test = np.load("processed\\preprocessing\\test_y.npy")
     
-    print(f"MAP Naive Bayes Classifier Results ({bow_type} features):")
-    print("Prior: Multinomial Distribution")
-    print(f"Best alpha: {best_alpha:.2f}")
-    print(f"Training Accuracy: {accuracy(y_train_pred, y_train):.4f}")
-    print(f"Validation Accuracy: {accuracy(y_val_pred, y_val):.4f}")
-    print(f"Test Accuracy: {accuracy(y_test_pred, y_test):.4f}")
- 
-    #Compare with sklearn's MultinomialNB
-    clf = MultinomialNB(alpha=best_alpha, fit_prior=True)
-    clf.fit(X_train_bow, y_train)
-    y_train_pred_sklearn = clf.predict(X_train_bow)
-    y_val_pred_sklearn = clf.predict(X_val_bow)
-    y_test_pred_sklearn = clf.predict(X_test_bow)
-    print("\nSklearn MultinomialNB Classifier Results:")
-    print(f"Alpha: {best_alpha:.2f}")
-    print(f"Training Accuracy: {accuracy(y_train_pred_sklearn, y_train):.4f}")
-    print(f"Validation Accuracy: {accuracy(y_val_pred_sklearn, y_val):.4f}")
-    print(f"Test Accuracy: {accuracy(y_test_pred_sklearn, y_test):.4f}")
-    
-if __name__ == "__main__":
-    
-    # Load the pre-processed data
-    feature_names = json.load(open("processed\\preprocessing\\feature_names.json", "r", encoding="utf-8"))
-    X_train = np.load("processed\\preprocessing\\train_X.npz")["data"]
-    y_train = np.load("processed\\preprocessing\\train_y.npy")
-
-    X_val = np.load("processed\\preprocessing\\val_X.npz")["data"]
-    y_val = np.load("processed\\preprocessing\\val_y.npy")
-    
-    X_test = np.load("processed\\preprocessing\\test_X.npz")["data"]
-    y_test = np.load("processed\\preprocessing\\test_y.npy")
-    
-    p_c, p_x_given_c, best_alpha, bow_type, X_train_bow, X_val_bow, X_test_bow = train_nb(feature_names, X_train, y_train, X_val, y_val, X_test, y_test)
-    eval_nb(p_c, p_x_given_c, X_train_bow, y_train, X_val_bow, y_val, X_test_bow, y_test, best_alpha, bow_type)
+#     p_c, p_x_given_c, best_alpha, bow_type, X_train_bow, X_val_bow = train_nb(feature_names, X_train, y_train, X_val, y_val)

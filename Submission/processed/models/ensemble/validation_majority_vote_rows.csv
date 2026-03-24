@@ -1,0 +1,337 @@
+split,unique_id,Painting,true_label,naive_bayes_pred,random_forest_pred,logistic_pred,ensemble_pred,ensemble_correct,vote_tie_resolved
+validation,10,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,12,The Persistence of Memory,The Persistence of Memory,The Starry Night,The Starry Night,The Starry Night,The Starry Night,False,False
+validation,16,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,17,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,20,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,27,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,28,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,37,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,44,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,53,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,57,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,63,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,67,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,87,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,90,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,97,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,100,The Persistence of Memory,The Persistence of Memory,The Starry Night,The Starry Night,The Starry Night,The Starry Night,False,False
+validation,107,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,115,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,122,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,124,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,133,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Starry Night,The Persistence of Memory,True,False
+validation,136,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,139,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,144,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,145,The Persistence of Memory,The Persistence of Memory,The Starry Night,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,147,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,148,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,151,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,152,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,154,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,157,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,166,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,170,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,172,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,185,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,186,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,189,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,195,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,202,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,205,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,206,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,220,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,10,The Starry Night,The Starry Night,The Water Lily Pond,The Starry Night,The Water Lily Pond,The Water Lily Pond,False,False
+validation,12,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,16,The Starry Night,The Starry Night,The Water Lily Pond,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,17,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,20,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,27,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Persistence of Memory,The Starry Night,True,False
+validation,28,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,37,The Starry Night,The Starry Night,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,False,False
+validation,44,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,53,The Starry Night,The Starry Night,The Water Lily Pond,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,57,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,63,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,67,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,87,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,90,The Starry Night,The Starry Night,The Water Lily Pond,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,97,The Starry Night,The Starry Night,The Water Lily Pond,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,100,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,107,The Starry Night,The Starry Night,The Water Lily Pond,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,115,The Starry Night,The Starry Night,The Persistence of Memory,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,122,The Starry Night,The Starry Night,The Persistence of Memory,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,124,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,133,The Starry Night,The Starry Night,The Persistence of Memory,The Starry Night,The Water Lily Pond,The Water Lily Pond,False,True
+validation,136,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,139,The Starry Night,The Starry Night,The Starry Night,The Persistence of Memory,The Starry Night,The Starry Night,True,False
+validation,144,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,145,The Starry Night,The Starry Night,The Water Lily Pond,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,147,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,148,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,151,The Starry Night,The Starry Night,The Water Lily Pond,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,152,The Starry Night,The Starry Night,The Starry Night,The Water Lily Pond,The Persistence of Memory,The Persistence of Memory,False,True
+validation,154,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,157,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Water Lily Pond,The Starry Night,True,False
+validation,166,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,170,The Starry Night,The Starry Night,The Water Lily Pond,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,172,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,185,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,186,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,189,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,195,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,202,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,205,The Starry Night,The Starry Night,The Water Lily Pond,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,206,The Starry Night,The Starry Night,The Persistence of Memory,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,220,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,10,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,12,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,16,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,17,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,20,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,27,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,28,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,37,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,44,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,53,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,57,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,63,The Water Lily Pond,The Water Lily Pond,The Starry Night,The Starry Night,The Water Lily Pond,The Starry Night,False,False
+validation,67,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,87,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,90,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,97,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,100,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,107,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,115,The Water Lily Pond,The Water Lily Pond,The Persistence of Memory,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,122,The Water Lily Pond,The Water Lily Pond,The Persistence of Memory,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,124,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,133,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,136,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,139,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,144,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,145,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,147,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,148,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,151,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,152,The Water Lily Pond,The Water Lily Pond,The Starry Night,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,154,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,157,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,166,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,170,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,172,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,185,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,186,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,189,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,195,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,202,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,205,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,206,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,220,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,229,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,233,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,234,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,245,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,251,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,257,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,False,False
+validation,258,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Starry Night,The Starry Night,The Starry Night,False,False
+validation,262,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,265,The Persistence of Memory,The Persistence of Memory,The Starry Night,The Starry Night,The Starry Night,The Starry Night,False,False
+validation,268,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,False,False
+validation,269,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,False,False
+validation,270,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Starry Night,The Starry Night,The Starry Night,False,False
+validation,275,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,280,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,288,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,293,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,311,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,313,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,316,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,317,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,318,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,329,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,349,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,353,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,358,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,364,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Starry Night,The Persistence of Memory,True,False
+validation,365,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,370,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,372,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,376,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,383,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,384,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,399,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,406,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,412,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,419,The Persistence of Memory,The Persistence of Memory,The Water Lily Pond,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,421,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Starry Night,The Persistence of Memory,True,False
+validation,422,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,423,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,429,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,430,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,433,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,443,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,446,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,448,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,453,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Starry Night,The Starry Night,The Starry Night,False,False
+validation,461,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,466,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,467,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,468,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,470,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,472,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Starry Night,The Water Lily Pond,The Water Lily Pond,False,True
+validation,487,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,488,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,489,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,496,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,497,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,500,The Persistence of Memory,The Persistence of Memory,The Starry Night,The Persistence of Memory,The Starry Night,The Starry Night,False,False
+validation,509,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,510,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,512,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,517,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,526,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,531,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Starry Night,The Persistence of Memory,True,False
+validation,541,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,542,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,549,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,555,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,560,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,True,False
+validation,229,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Water Lily Pond,The Starry Night,True,False
+validation,233,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,234,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Water Lily Pond,The Starry Night,True,False
+validation,245,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,251,The Starry Night,The Starry Night,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,False,False
+validation,257,The Starry Night,The Starry Night,The Persistence of Memory,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,False,False
+validation,258,The Starry Night,The Starry Night,The Persistence of Memory,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,False,False
+validation,262,The Starry Night,The Starry Night,The Persistence of Memory,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,False,False
+validation,265,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,268,The Starry Night,The Starry Night,The Persistence of Memory,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,False,False
+validation,269,The Starry Night,The Starry Night,The Persistence of Memory,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,False,False
+validation,270,The Starry Night,The Starry Night,The Persistence of Memory,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,False,False
+validation,275,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,280,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,288,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,293,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,311,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,313,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,316,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,317,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,318,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,329,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,349,The Starry Night,The Starry Night,The Starry Night,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,False,False
+validation,353,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,358,The Starry Night,The Starry Night,The Persistence of Memory,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,364,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,365,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,370,The Starry Night,The Starry Night,The Starry Night,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,False,False
+validation,372,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Water Lily Pond,The Starry Night,True,False
+validation,376,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Persistence of Memory,The Starry Night,True,False
+validation,383,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,384,The Starry Night,The Starry Night,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,False,False
+validation,399,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,406,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,412,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,419,The Starry Night,The Starry Night,The Persistence of Memory,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,421,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,422,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,423,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,429,The Starry Night,The Starry Night,The Persistence of Memory,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,430,The Starry Night,The Starry Night,The Water Lily Pond,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,433,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,443,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,446,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,448,The Starry Night,The Starry Night,The Starry Night,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,False,False
+validation,453,The Starry Night,The Starry Night,The Persistence of Memory,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,461,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,466,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,467,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,468,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,470,The Starry Night,The Starry Night,The Water Lily Pond,The Water Lily Pond,The Starry Night,The Water Lily Pond,False,False
+validation,472,The Starry Night,The Starry Night,The Persistence of Memory,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,487,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Water Lily Pond,The Starry Night,True,False
+validation,488,The Starry Night,The Starry Night,The Water Lily Pond,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,489,The Starry Night,The Starry Night,The Water Lily Pond,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,496,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,497,The Starry Night,The Starry Night,The Water Lily Pond,The Water Lily Pond,The Starry Night,The Water Lily Pond,False,False
+validation,500,The Starry Night,The Starry Night,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,False,False
+validation,509,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,510,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,512,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,517,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,526,The Starry Night,The Starry Night,The Persistence of Memory,The Persistence of Memory,The Starry Night,The Persistence of Memory,False,False
+validation,531,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,541,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,542,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,549,The Starry Night,The Starry Night,The Starry Night,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,False,False
+validation,555,The Starry Night,The Starry Night,The Persistence of Memory,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,560,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,The Starry Night,True,False
+validation,229,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,233,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,234,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,245,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,251,The Water Lily Pond,The Water Lily Pond,The Starry Night,The Starry Night,The Starry Night,The Starry Night,False,False
+validation,257,The Water Lily Pond,The Water Lily Pond,The Persistence of Memory,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,258,The Water Lily Pond,The Water Lily Pond,The Persistence of Memory,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,262,The Water Lily Pond,The Water Lily Pond,The Persistence of Memory,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,265,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,268,The Water Lily Pond,The Water Lily Pond,The Persistence of Memory,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,269,The Water Lily Pond,The Water Lily Pond,The Persistence of Memory,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,270,The Water Lily Pond,The Water Lily Pond,The Persistence of Memory,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,275,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,280,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,288,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,293,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,311,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,313,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,316,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,317,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,318,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,329,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,349,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,353,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,358,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,364,The Water Lily Pond,The Water Lily Pond,The Persistence of Memory,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,365,The Water Lily Pond,The Water Lily Pond,The Starry Night,The Starry Night,The Water Lily Pond,The Starry Night,False,False
+validation,370,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,372,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,376,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,383,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,384,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,399,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,406,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,412,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,419,The Water Lily Pond,The Water Lily Pond,The Persistence of Memory,The Water Lily Pond,The Persistence of Memory,The Persistence of Memory,False,False
+validation,421,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,422,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,423,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,429,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,430,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,433,The Water Lily Pond,The Water Lily Pond,The Persistence of Memory,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,443,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,446,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,448,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,453,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,461,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,466,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,467,The Water Lily Pond,The Water Lily Pond,The Starry Night,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,468,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,470,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,472,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,487,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,488,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,489,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,496,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,497,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,500,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Persistence of Memory,The Persistence of Memory,The Persistence of Memory,False,False
+validation,509,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Starry Night,The Water Lily Pond,True,False
+validation,510,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,512,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,517,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,526,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,531,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,541,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,542,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,549,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,555,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False
+validation,560,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,The Water Lily Pond,True,False

@@ -1,0 +1,35 @@
+{
+  "source_csv": "C:\\Users\\Franc\\OneDrive\\Documents\\UofT\\Winter 2026\\CSC311\\CSC311-Group-Project\\data\\training_data_202601.csv",
+  "random_seed": 311,
+  "group_column": "unique_id",
+  "target_column": "Painting",
+  "split_ratios": {
+    "train": 0.7,
+    "val": 0.2,
+    "test": 0.1
+  },
+  "split_sizes": {
+    "train": {
+      "rows": 1179,
+      "groups": 393
+    },
+    "val": {
+      "rows": 336,
+      "groups": 112
+    },
+    "test": {
+      "rows": 171,
+      "groups": 57
+    }
+  },
+  "label_mapping": {
+    "The Persistence of Memory": 0,
+    "The Starry Night": 1,
+    "The Water Lily Pond": 2
+  },
+  "feature_count": 2722,
+  "text_feature_count": 2688,
+  "categorical_feature_count": 17,
+  "numeric_feature_count": 17,
+  "feature_names_path": "feature_names.json"
+}
