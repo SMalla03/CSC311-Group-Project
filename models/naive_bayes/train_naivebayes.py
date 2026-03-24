@@ -1,6 +1,7 @@
 import numpy as np
 import json
 from sklearn.naive_bayes import MultinomialNB
+import matplotlib.pyplot as plt
 def naive_bayes_map(X, t, alpha, method = "binary"):
     
     N, vocab_size = X.shape[0], X.shape[1]
@@ -124,6 +125,15 @@ def main():
     print(f"Validation Accuracy: {accuracy(y_val_pred_sklearn, y_val):.4f}")
     print(f"Test Accuracy: {accuracy(y_test_pred_sklearn, y_test):.4f}")
     
+    plt.figure(figsize=(10, 6))
+    plt.title(f"Validation Accuracy vs Alpha for MAP Naive Bayes ({bow_type} features)")
+    plt.xlabel("Alpha")
+    plt.ylabel("Validation Accuracy")
+    plt.axvline(x=best_alpha, color='red', linestyle='--', label=f'Best alpha: {best_alpha:.2f}')
+    plt.grid(True)
+    plt.scatter(alphas, accs)
+    plt.legend()
+    plt.show()
     
 if __name__ == "__main__":
     
