@@ -33,18 +33,19 @@ def predict_all(filename):
     """
 
     # Read the file containing the test data
-    data = dense_load(filename)
     predictions = []
     
-    # Load the pre-processed training data and feature names
+    # Load the pre-processed training data and preprocessing pipeline
+    X_train = np.load("processed\\preprocessing\\train_X.npz")["data"]
+    y_train = np.load("processed\\preprocessing\\train_y.npy")
     preprocessor = load_preprocessor(DEFAULT_PREPROCESSED_DIR)
     frame = read_rows(filename, preprocessor)
-    x = preprocess_frame(frame, preprocessor)
+    X_in = preprocess_frame(frame, preprocessor)
     
     # Trained Naive Bayes model parameters
     alpha = 6.32
     p_c, p_x_given_c = naive_bayes_map(X_train, y_train, alpha, method = "binary")
-    y_nb = make_prediction(data, p_c, p_x_given_c)
+    y_nb = make_prediction(X_in, p_c, p_x_given_c)
     
         
     return predictions
