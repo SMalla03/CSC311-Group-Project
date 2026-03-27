@@ -83,7 +83,10 @@ def preprocess_frame(frame: pd.DataFrame, preprocessor: dict) -> np.ndarray:
 
 def read_rows(csv_path: Path | str, preprocessor: dict) -> pd.DataFrame:
     frame = pd.read_csv(Path(csv_path))
-    missing = [column for column in preprocessor["resolved_columns"].values() if column not in frame.columns]
+    required_columns = set(preprocessor["text_columns"])
+    required_columns.update(preprocessor["categorical_columns"].values())
+    required_columns.update(spec.source_column for spec in preprocessor["numeric_specs"])
+    missing = [column for column in required_columns if column not in frame.columns]
     if missing:
         raise ValueError(f"Missing expected columns in {csv_path}: {missing}")
     return frame
