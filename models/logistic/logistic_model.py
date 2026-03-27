@@ -36,6 +36,7 @@ from models.common import (  # noqa: E402
 DEFAULT_PREPROCESSED_DIR = PROJECT_ROOT / "processed" / "preprocessing"
 DEFAULT_OUTPUT_DIR = PROJECT_ROOT / "processed" / "models" / "logistic"
 DEFAULT_MODEL_PATH = DEFAULT_OUTPUT_DIR / "logistic_model.joblib"
+DEFAULT_INFERENCE_PARAMS_PATH = DEFAULT_OUTPUT_DIR / "logistic_inference_params.npz"
 DEFAULT_FEATURE_SET = "full"
 DEFAULT_C = 2.0
 DEFAULT_MAX_ITER = 2000
@@ -188,6 +189,17 @@ def write_performance_summary(path: Path, run_summary: dict[str, object], split_
     path.write_text("\n".join(lines), encoding="utf-8")
 
 
+def export_inference_params(path: Path, model: LogisticRegression, labels: list[str], feature_set: str) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    np.savez_compressed(
+        path,
+        coef=model.coef_.astype(np.float32),
+        intercept=model.intercept_.astype(np.float32),
+        classes=np.array(labels, dtype=object),
+        feature_set=np.array(feature_set, dtype=object),
+    )
+
+
 def train_model(
     preprocessed_dir: Path,
     output_dir: Path,
@@ -238,6 +250,7 @@ def train_model(
 
     output_dir.mkdir(parents=True, exist_ok=True)
     joblib.dump({"model": model, "labels": label_names, "feature_set": feature_set}, model_path)
+    export_inference_params(output_dir / DEFAULT_INFERENCE_PARAMS_PATH.name, model, label_names, feature_set)
     write_json(output_dir / "logistic_metrics.json", split_reports)
     write_training_report(output_dir / "logistic_training_report.md", run_summary, split_reports)
     write_weight_summary(output_dir / "logistic_weight_summary.md", model, feature_names, label_names, DEFAULT_TOP_FEATURES)

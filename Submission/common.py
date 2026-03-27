@@ -7,7 +7,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from preprocessing import preprocess_dataset as prep
+import preprocessing as prep
 
 
 def ensure_preprocessor_pickle_compatibility() -> None:

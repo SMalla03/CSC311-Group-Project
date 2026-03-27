@@ -1,6 +1,13 @@
 import numpy as np
 import json
+from pathlib import Path
 from sklearn.naive_bayes import MultinomialNB
+
+
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+DEFAULT_PREPROCESSED_DIR = PROJECT_ROOT / "processed" / "preprocessing"
+DEFAULT_OUTPUT_DIR = PROJECT_ROOT / "processed" / "models" / "naive_bayes"
+DEFAULT_INFERENCE_PARAMS_PATH = DEFAULT_OUTPUT_DIR / "nb_inference_params.npz"
 
 
 def naive_bayes_map(X, t, alpha, method = "binary"):
@@ -70,7 +77,7 @@ def make_prediction(X, pi, theta):
 def accuracy(y, t):
     return np.mean(y == t)
 
-def tune_alpha(X_train_bow, y_train, X_val_bow, y_val, alphas):
+def tune_alpha(X_train_bow, y_train, X_val_bow, y_val, alphas, bow_type):
     # Tune alpha as a hyperparameter
     
     accs = []
@@ -81,6 +88,16 @@ def tune_alpha(X_train_bow, y_train, X_val_bow, y_val, alphas):
     
     best_alpha = alphas[np.argmax(accs)]
     return best_alpha
+
+def export_inference_params(path, pi, theta, alpha, text_feature_count):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    np.savez_compressed(
+        path,
+        pi=pi.astype(np.float32),
+        theta=theta.astype(np.float32),
+        alpha=np.array(alpha, dtype=np.float32),
+        text_feature_count=np.array(text_feature_count, dtype=np.int64),
+    )
 
 def train_nb(feature_names, X_train, y_train, X_val, y_val, X_test, y_test):
     
@@ -95,7 +112,7 @@ def train_nb(feature_names, X_train, y_train, X_val, y_val, X_test, y_test):
     bow_type = "binary"
     # Tuning alpha as a hyperparameter using the validation set
     alphas = np.linspace(0.01, 10, 20)
-    best_alpha = tune_alpha(X_train_bow, y_train, X_val_bow, y_val, alphas)
+    best_alpha = tune_alpha(X_train_bow, y_train, X_val_bow, y_val, alphas, bow_type)
     
     # Train the final model with the best alpha and evaluate on the test set
     p_c, p_x_given_c = naive_bayes_map(X_train_bow, y_train, best_alpha, method = bow_type)
@@ -130,15 +147,17 @@ def eval_nb(p_c, p_x_given_c, X_train_bow, y_train, X_val_bow, y_val, X_test_bow
 if __name__ == "__main__":
     
     # Load the pre-processed data
-    feature_names = json.load(open("processed\\preprocessing\\feature_names.json", "r", encoding="utf-8"))
-    X_train = np.load("processed\\preprocessing\\train_X.npz")["data"]
-    y_train = np.load("processed\\preprocessing\\train_y.npy")
+    feature_names = json.load(open(DEFAULT_PREPROCESSED_DIR / "feature_names.json", "r", encoding="utf-8"))
+    X_train = np.load(DEFAULT_PREPROCESSED_DIR / "train_X.npz")["data"]
+    y_train = np.load(DEFAULT_PREPROCESSED_DIR / "train_y.npy")
 
-    X_val = np.load("processed\\preprocessing\\val_X.npz")["data"]
-    y_val = np.load("processed\\preprocessing\\val_y.npy")
+    X_val = np.load(DEFAULT_PREPROCESSED_DIR / "val_X.npz")["data"]
+    y_val = np.load(DEFAULT_PREPROCESSED_DIR / "val_y.npy")
     
-    X_test = np.load("processed\\preprocessing\\test_X.npz")["data"]
-    y_test = np.load("processed\\preprocessing\\test_y.npy")
+    X_test = np.load(DEFAULT_PREPROCESSED_DIR / "test_X.npz")["data"]
+    y_test = np.load(DEFAULT_PREPROCESSED_DIR / "test_y.npy")
     
     p_c, p_x_given_c, best_alpha, bow_type, X_train_bow, X_val_bow, X_test_bow = train_nb(feature_names, X_train, y_train, X_val, y_val, X_test, y_test)
     eval_nb(p_c, p_x_given_c, X_train_bow, y_train, X_val_bow, y_val, X_test_bow, y_test, best_alpha, bow_type)
+    export_inference_params(DEFAULT_INFERENCE_PARAMS_PATH, p_c, p_x_given_c, best_alpha, X_train_bow.shape[1])
+    print(f"Saved NB inference params to: {DEFAULT_INFERENCE_PARAMS_PATH}")
