@@ -99,15 +99,15 @@ def export_inference_params(path, pi, theta, alpha, text_feature_count):
         text_feature_count=np.array(text_feature_count, dtype=np.int64),
     )
 
-def train_nb(feature_names, X_train, y_train, X_val, y_val, X_test, y_test):
+def train_nb( X_train, y_train, X_val, y_val, X_test):
     
     # Pick out vocab from the feature names
-    vocab = [f.split(":")[1] for f in feature_names if isinstance(f, str) and f.startswith("text:")]
+    feature_len = 2688+17 # 2688 text features + 17 categorical features
 
     # bag of words data matrices with tf-idf features
-    X_train_bow = X_train[:, :len(vocab)]
-    X_val_bow = X_val[:, :len(vocab)]
-    X_test_bow = X_test[:, :len(vocab)]
+    X_train_bow = X_train[:, :feature_len]
+    X_val_bow = X_val[:, :feature_len]
+    X_test_bow = X_test[:, :feature_len]
     
     bow_type = "binary"
     # Tuning alpha as a hyperparameter using the validation set
@@ -144,6 +144,11 @@ def eval_nb(p_c, p_x_given_c, X_train_bow, y_train, X_val_bow, y_val, X_test_bow
     print(f"Validation Accuracy: {accuracy(y_val_pred_sklearn, y_val):.4f}")
     print(f"Test Accuracy: {accuracy(y_test_pred_sklearn, y_test):.4f}")
     
+    # Calculate Precision, Recall, F1-score for each class
+    from sklearn.metrics import classification_report
+    print("\nClassification Report for MAP Naive Bayes:")
+    print(classification_report(y_test, y_test_pred, target_names=["POM", "SN", "WLP"]))
+    
 if __name__ == "__main__":
     
     # Load the pre-processed data
@@ -157,7 +162,7 @@ if __name__ == "__main__":
     X_test = np.load(DEFAULT_PREPROCESSED_DIR / "test_X.npz")["data"]
     y_test = np.load(DEFAULT_PREPROCESSED_DIR / "test_y.npy")
     
-    p_c, p_x_given_c, best_alpha, bow_type, X_train_bow, X_val_bow, X_test_bow = train_nb(feature_names, X_train, y_train, X_val, y_val, X_test, y_test)
+    p_c, p_x_given_c, best_alpha, bow_type, X_train_bow, X_val_bow, X_test_bow = train_nb(X_train, y_train, X_val, y_val, X_test)
     eval_nb(p_c, p_x_given_c, X_train_bow, y_train, X_val_bow, y_val, X_test_bow, y_test, best_alpha, bow_type)
     export_inference_params(DEFAULT_INFERENCE_PARAMS_PATH, p_c, p_x_given_c, best_alpha, X_train_bow.shape[1])
     print(f"Saved NB inference params to: {DEFAULT_INFERENCE_PARAMS_PATH}")
