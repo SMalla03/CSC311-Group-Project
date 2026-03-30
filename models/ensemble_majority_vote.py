@@ -25,10 +25,6 @@ from models.common import (  # noqa: E402
     load_preprocessor,
     select_feature_indices,
 )
-from models.naive_bayes.train_naivebayes import (  # noqa: E402
-    make_prediction,
-    naive_bayes_map,
-)
 
 
 DEFAULT_PREPROCESSED_DIR = PROJECT_ROOT / "processed" / "preprocessing"
@@ -37,6 +33,7 @@ COMBINED_REPORT_PATH = DEFAULT_OUTPUT_DIR / "majority_vote_report.md"
 TRAIN_ROWS_PATH = DEFAULT_OUTPUT_DIR / "train_majority_vote_rows.csv"
 VALIDATION_ROWS_PATH = DEFAULT_OUTPUT_DIR / "validation_majority_vote_rows.csv"
 TEST_ROWS_PATH = DEFAULT_OUTPUT_DIR / "test_majority_vote_rows.csv"
+NB_PARAMS_PATH = PROJECT_ROOT / "processed" / "models" / "naive_bayes" / "nb_inference_params.npz"
 RF_MODEL_PATH = PROJECT_ROOT / "processed" / "models" / "random_forest" / "rf_model.joblib"
 LOGISTIC_MODEL_PATH = PROJECT_ROOT / "processed" / "models" / "logistic" / "logistic_model.joblib"
 
@@ -68,15 +65,18 @@ def softmax_from_scores(scores: np.ndarray) -> np.ndarray:
     return exp_scores / exp_scores.sum(axis=1, keepdims=True)
 
 
-def naive_bayes_predict_with_probs(
-    x_train_text: np.ndarray,
-    y_train: np.ndarray,
-    x_eval_text: np.ndarray,
-    alpha: float,
+def load_nb_predictions(
+    x_full: np.ndarray,
+    path: Path,
 ) -> tuple[np.ndarray, np.ndarray]:
-    priors, theta = naive_bayes_map(x_train_text, y_train, alpha)
-    log_scores = x_eval_text @ np.log(theta) + np.log(priors)
-    predictions = make_prediction(x_eval_text, priors, theta)
+    require_file(path)
+    params = np.load(path)
+    priors = params["pi"]
+    theta = params["theta"]
+    nb_feature_count = int(params["text_feature_count"])
+    x_nb = x_full[:, :nb_feature_count]
+    log_scores = x_nb @ np.log(theta) + np.log(priors)
+    predictions = np.argmax(log_scores, axis=1)
     probabilities = softmax_from_scores(log_scores)
     return predictions, probabilities
 
@@ -236,22 +236,14 @@ def main() -> None:
     preprocessor = load_preprocessor(processed_dir)
     labels = preprocessor["label_encoder"].classes_
     feature_names = load_feature_names(processed_dir)
-    text_feature_count = sum(
-        1 for feature_name in feature_names if isinstance(feature_name, str) and feature_name.startswith("text:")
-    )
-
     x_train, y_train, x_val, y_val, x_test, y_test = load_split_arrays(processed_dir)
     train_rows = load_split_rows(processed_dir, "train")
     val_rows = load_split_rows(processed_dir, "val")
     test_rows = load_split_rows(processed_dir, "test")
-    x_train_text = x_train[:, :text_feature_count]
-    x_val_text = x_val[:, :text_feature_count]
-    x_test_text = x_test[:, :text_feature_count]
 
-    nb_alpha = 6.32
-    nb_train_pred, nb_train_prob = naive_bayes_predict_with_probs(x_train_text, y_train, x_train_text, nb_alpha)
-    nb_val_pred, nb_val_prob = naive_bayes_predict_with_probs(x_train_text, y_train, x_val_text, nb_alpha)
-    nb_test_pred, nb_test_prob = naive_bayes_predict_with_probs(x_train_text, y_train, x_test_text, nb_alpha)
+    nb_train_pred, nb_train_prob = load_nb_predictions(x_train, NB_PARAMS_PATH)
+    nb_val_pred, nb_val_prob = load_nb_predictions(x_val, NB_PARAMS_PATH)
+    nb_test_pred, nb_test_prob = load_nb_predictions(x_test, NB_PARAMS_PATH)
 
     rf_train_pred, rf_train_prob = load_bundle_predictions(RF_MODEL_PATH, x_train, feature_names)
     rf_val_pred, rf_val_prob = load_bundle_predictions(RF_MODEL_PATH, x_val, feature_names)
